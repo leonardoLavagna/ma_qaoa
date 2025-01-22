@@ -9,7 +9,7 @@ import numpy as np
 from typing import List, Tuple
 from networkx import Graph
 from qiskit import QuantumCircuit, transpile
-from qiskit_aer import Aer
+from qiskit_aer import AerSimulator
 from scipy.optimize import minimize
 from functions import maxcut_utilities as m_utils
 from config import backend, verbose

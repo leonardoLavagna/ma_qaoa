@@ -9,11 +9,10 @@ import numpy as np
 from typing import List, Tuple
 from networkx import Graph
 from itertools import chain
-from qiskit import QuantumCircuit
-from qiskit_aer import Aer
+from qiskit.circuit import QuantumCircuit
+from qiskit_aer import AerSimulator
 from scipy.optimize import minimize
 from config import verbose
-from pynauty import *
 
 
 def compute_max_cut_exactly(G: Graph) -> int:

@@ -4,7 +4,7 @@
 #------------------------------------------------------------------------------
 
 
-from qiskit_aer import Aer
+from qiskit_aer import AerSimulator
 
 
 #p (int): The number of qaoa layers.
@@ -20,7 +20,7 @@ seed = 121
 verbose = False
 
 #backend (Qiskit backend): A Qiskit backend to simulate a quantum device.
-backend = Aer.get_backend("aer_simulator")
+backend = AerSimulator(method='automatic')
 
 #mixer (str): Type of qaoa mixer operator. Currently are available 'x', 'y', 'xx', 'xy' and 'yy' mixers.
 mixer = "x" 

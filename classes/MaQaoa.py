@@ -8,16 +8,15 @@ import numpy as np
 from matplotlib import pyplot as plt
 from classes import Problems as P
 from functions import ma_qaoa_utilities as utils
-from qiskit import QuantumCircuit
-from qiskit_aer import Aer
+from qiskit_aer import AerSimulator
 from typing import List, Tuple
 from networkx import Graph
-from qiskit.circuit import ParameterVector
+from qiskit.circuit import ParameterVector, QuantumCircuit
 
 
 class MaQaoa:
     def __init__(self, p: int=1, G: Graph = None, betas: List[float] = None, gammas: List[float] = None,
-                 backend = Aer.get_backend('qasm_simulator'), measure: bool = True, 
+                 backend = AerSimulator(method='automatic'), measure: bool = True, 
                  seed: int = None, verbose: bool = True):
         """Initialize class MaQaoa.
         
@@ -27,7 +26,6 @@ class MaQaoa:
             betas (list): Angles for the mixer operator.
             gammas (list): Angles for the cost operator.
             backend (Qiskit backend): Qiskit backend to execute the code on a quantum simulator. 
-                                      The default is Aer.get_backend('qasm_simulator').
             measure (bool): If True measure the qaoa circuit. The default is True.
             seed (int): Seed for a pseudo-random number generator. The default is None.
             verbose (bool): If True enters in debugging mode. The default is True.
